@@ -105,7 +105,7 @@ app.post("/payment", async (req, res) => {
           currency: "sgd",
           product_data: {
             name: itemproduct.bagName,
-            images: [`http://localhost:5000/Images/${itemproduct.image}`], // Use base 64 to work properly the image
+            images: [`https://fs105-ridwan111.onrender.com/${itemproduct.image}`], // Use base 64 to work properly the image
           },
           unit_amount: Math.round(itemproduct.priceTag * 100), // this is the amount
         },
@@ -118,7 +118,7 @@ app.post("/payment", async (req, res) => {
         payment_method_types: ['card', 'paynow'],
         line_items: itemProducts, // Per line items
         mode: "payment",
-        success_url: "http://localhost:3000/successpayment", // if success go to success url
+        success_url: "https://fs105-ridwan111.onrender.com/successpayment", // if success go to success url
         cancel_url: "http://localhost:3000/cart",
       });
   
