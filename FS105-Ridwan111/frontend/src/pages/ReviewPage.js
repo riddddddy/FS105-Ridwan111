@@ -47,7 +47,7 @@ const ReviewPage = () => {
     // }
 
     try {
-        const response = await axios.post(`/api/reviews`, { user: userData, rating, comment, item: bagName });
+        const response = await axios.post(`https://fs105-ridwan111.onrender.com/api/reviews`, { user: userData, rating, comment, item: bagName });
         const responseData = response.data
         console.log(responseData)
         //fetchReviews();

@@ -27,7 +27,7 @@ const Cart = () => {
 
         };
 
-        const responseget = await fetch(`/config?password=${process.env.REACT_APP_API_KEY}`)
+        const responseget = await fetch(`https://fs105-ridwan111.onrender.com/config?password=${process.env.REACT_APP_API_KEY}`)
 
         const apidata = await responseget.json();
 
@@ -37,7 +37,7 @@ const Cart = () => {
             products: cartItems,
         }
 
-        const response = await fetch(`/payment`, {
+        const response = await fetch(`https://fs105-ridwan111.onrender.com/payment`, {
             method: "POST",
             headers: headers,
             body: JSON.stringify(body),
@@ -58,7 +58,7 @@ const Cart = () => {
 
     const getCartItems = async () => {
 
-        const response = await fetch(`/api/cart/${user?.user._id}`)
+        const response = await fetch(`https://fs105-ridwan111.onrender.com/api/cart/${user?.user._id}`)
         const data = await response.json()
         setCartItems( 
             data.map(cartItem => {
@@ -160,7 +160,7 @@ const Cart = () => {
     </svg>
 
     const deleteHandler = async (id) => {
-        const response = await fetch(`/api/cart/${id}`, {
+        const response = await fetch(`https://fs105-ridwan111.onrender.com/api/cart/${id}`, {
             method: "DELETE"
         })
 
@@ -185,7 +185,7 @@ const Cart = () => {
         const data = {
             items: cartItems
         }
-        const response = await fetch(`/api/cart/${user?.user._id}`, {
+        const response = await fetch(`https://fs105-ridwan111.onrender.com/api/cart/${user?.user._id}`, {
             method: "PATCH",
             headers : {
                 "Content-Type": "application/json",
@@ -232,7 +232,7 @@ const Cart = () => {
                                             <React.Fragment key={`${index}`}>
                                                 <li className="flex flex-col justify-center items-center space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                                                     <div className="shrink-0">
-                                                        <img className="h-24 w-24 max-w-full rounded-lg object-cover" src={`http://localhost:5000/Images/${item.image}`} alt={item.bagName} />
+                                                        <img className="h-24 w-24 max-w-full rounded-lg object-cover" src={`https://fs105-ridwan111.onrender.com/Images/${item.image}`} alt={item.bagName} />
                                                     </div>
 
                                                     <div className="relative flex flex-1 flex-col justify-center items-center">
