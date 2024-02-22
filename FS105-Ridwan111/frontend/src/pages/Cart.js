@@ -53,6 +53,19 @@ const Cart = () => {
             console.log(results.error)
         }
 
+
+        const response2 = await fetch(`https://fs105-ridwan111.onrender.com/api/cart/delete/${user?.user._id}`,{
+            method:"DELETE"
+        })
+        const json2 = await response2.json()
+
+        if(!response2.ok){
+            console.log(json2.error)
+        }
+
+        if(response2.ok){
+            console.log(json2.message)
+        }
     }
 
 
