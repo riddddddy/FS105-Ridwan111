@@ -118,7 +118,7 @@ app.post("/payment", async (req, res) => {
         payment_method_types: ['card', 'paynow'],
         line_items: itemProducts, // Per line items
         mode: "payment",
-        success_url: "https://fs105-ridwan111.onrender.com/successpayment", // if success go to success url
+        success_url: "https://capstonefs105.netlify.app/successpayment", // if success go to success url
         cancel_url: "http://localhost:3000/cart",
       });
   
